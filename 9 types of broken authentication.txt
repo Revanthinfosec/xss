@@ -1,0 +1,73 @@
+9 different ways to find Broken Authentication 
+ 
+Broken was standing at 2nd place in OWASP BUG list.
+ways:
+
+Type 1:
+ 
+---> IMPROPER AUTHENTICATION.
+
+SYENARIO:
+User 1 = victim
+User 2 = attacker
+
+User 2 goes to the login page of a website and put the email address of User 1 and then gives a random paswords then he INTERCEPT THE REQUEST and then he captures the response to that request. So here he sees the request and then read it as the RESPONSE CODE MUST BE 400 so then the User 2 manipulate that 400 to 200 and then sends that response to browser so then if he gets logged in we can say that as IMPROPER AUTHENTICATION. There are so many methods for this. So in order to find more of them you can see in the INSTAGRAM PAGE ---> bug_xss
+
+Type 2:
+
+---> USE OF SINGLE FACTOR AUTHENTICATION
+
+SYNERIO:
+Some pages have multi factor authentication and 2FA so if you don't find them then you can report it. Or if you can bypass that then you can report it.
+
+Type 3:
+
+---> UNPROTECTED STORAGE OF CREDENTIALS
+
+SYBERIO:
+We can also call it as SOURCE CODE REVIEW
+
+Right click on the login page and select on "view source code" so you might find the ID as well as PASSWORDS sometime so this will help us to get the ADMIN PAGE details also and also which the public was not access to and it was better to see HARD CODE CREDENTIALS, GITHUB THINGS AND PASSWORDS OF OUR OWN ACCOUNT
+
+Type 4:
+
+---> PREDICTABLE LOGIN CREDENTIALS
+
+SYNERIO:
+
+Q) What id predictable login credentials?
+A) These were the credentials which were Hard Coded and Developers forgot to remove those credentials like ADMIN ADMIN, ADMIN PASSWORD, ROOT PASSWORD, which were very common and easily accesible.
+
+Type 5:
+
+---> EXPOSING SESSION ID'S IN URLS
+
+SYNERIO:
+This is a critical vulnerability and we can find this in BURP SUITE ISSUES TAG and what this mean we are having a URL and it contain session id so User 2 takes this and rewrites this URL and then he can have the access to his / her session which is not expired
+
+Type 6:
+
+---> SESSION DOES NOT LOGG OUT OR THE SESSION WILL NOT EXPIRE AFTER CHANGING THE PASSWORD OF AN ACCOUNT IN OTHER BROWSER AND IT WAS 35 SECONDS Vulnerability 
+
+Type 7:
+
+---> IN SUFFICIENT EXPIRATION 
+
+SYNERIO:
+Related to session does not expiry so it mean if a session was not expiring after 30, 45 min or 1 hour then we can say that it was a vulnerability it mean the session will expire within the above given time when you are not doing any actions in particular one.
+
+Type 8:
+
+UNVERIFIED PASSWORD CHANGE
+
+---> SYNERIO:
+This was also called as another 35 seconds vulnerability as we can find it in 35 seconds. So when we change as password then we should receive an email link that the PASSWORD WAS CHANGED if no verification main sent then we can report this.
+
+Type 9:
+
+---> 
+
+Sending passwords session id & other credntial
+
+This is little tedious to find this vulnerability but try harder you can get it 
+If the password was not encoded then we can report it 

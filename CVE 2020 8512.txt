@@ -1,0 +1,35 @@
+CVE 2020-8512
+
+BUG : IceWarp WebMail 11.4.4.1 - Reflective Cross Site Scripting
+
+Vulnerable version: 11.4.4.1 and older one..
+What was the vulnerablity?
+There was a bug called as Reflective XSS in IceWarp WebMail version starts from 11.4.4.1 and also older one
+
+This software was running on many other servers used for mails such as webmail has vulnerable software and the vulnerable parameter was color parameter.
+
+Vulnerable example:     
+			
+			---> http://example.com/webmail/?color="><svg/onload=alert(1)>
+
+
+How a vulnerable url will look like:-
+http://website.com/webmail/?color="><svg/onload=alert(1)>
+
+How can you find it?
+With the help of a google dork. 
+Google Dork: 
+		---> inurl:/webmail/ intext:Powered by IceWrap Server site:*.uk
+
+
+It was a reflected xss .
+
+STEPS:
+Search a target using the google dork and the select any of the domain and then proceed
+
+1. Search for target and select any of it
+2. Then add the paramatere to the target such as [  ?color=revanth ] and then point to the url and then see that whether it was reflecting or not and also search in source code also so if you found it then you can proceed 
+3. Then reflcted means we are having the scope so then do balancing for it 
+	?color=revanth"><img src=x onerror=confirm(1)>
+
+So we can see that the website/doamin/target will be poping up a dialouge box with 1

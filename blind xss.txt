@@ -1,0 +1,15 @@
+BLIND XSS
+----------
+Blind XSS was a type of xss which will not be triggered at the time when it was being injected as it need to go to server and have to perform so much backend task so to do it we should follow the below steps...
+-----
+
+1. Create an account in XSS HUNTER WEBSITE
+2. Now you get a list of payloads on yours account page.
+3. Now copy the payload and paste it in the target so as a result you will get an executed output.
+4. So in XSS HUNTER you will get a free domain.
+5. So when we paste it in target as a result if it was valid you will get a point in the website of XSS HUNTER.
+6. Now to submit it in markdown style just visit the website ---> StackEdit.io
+7. Now paste the result in the StackEdit.io replace everything and you get result.
+
+How to use blind xss of dalfox?
+Just add -b at the 

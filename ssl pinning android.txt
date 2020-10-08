@@ -1,0 +1,43 @@
+ANDROID SSL 
+
+Android pentesting / SSL PINNING requirements
+Android pentesting has 2 types such as STATIC & DYNAMIC Analysis
+ 
+STATIC:
+We identify and anayse code of mobile application. So android applications are with and extension of --> .apk
+The apk files are noting but same as .zip files 
+Code of an app will be seen as whether it was written correctly or not and sometimes we are going to look that whether the code was having any of the sensitive data like API KEYS, SSL CERTIFICATES, USERNAMES & PASSWORDS.
+
+Apart from keys we had lot more things like access to internal dash boards, internal infrastrutures, as well as IP's, etc...
+So these were identified in static analysis
+ 
+DYNAMIC ANALYSIS:
+In dynamic we see for dynamic thing such as moving one such as the REQUESTS. How to do means:
+
+Capture the REQUEST and make modifications to that request and then we are making the modifications to lot more. So it was that.
+
+To start the D.A we 1st need to 1st milestone 
+To do it we should "capture the request"
+To capture the request we have to configure our proxy and then push a ROOT CA CERTIFICATE.
+So to do that we are having a problem such as SSL PINNING which was present in our android mobiles.
+
+SSL = SECURE SOCKET LAYER. 
+
+How SSL PINNIG was done and this was our 1st hurdel so how to overcome it?
+
+SSL PINNING will be bypassed in 3 different ways
+1st way was having highest success rate which was mostly followed.
+2nd was using freeda which was a server to bypass SSL PINNING
+3rd one was modifying pinned certificate / code into the device as this was difficult to do this.
+
+Android enumelator such as --> genymotion enumelator
+NOTE:- genymotion works with the Virtual Box mainly
+Select android version higher than 7.0 and device be nexus or google pixel
+and keep everything as default
+select bridge adapter type : wifi
+and install
+*Burpsuite
+*Rooted Android Phone / Emulator(vm runs android os)
+*Application to test
+
+
